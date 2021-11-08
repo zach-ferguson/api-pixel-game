@@ -1,0 +1,56 @@
+GET http://localhost:8000/users
+
+###
+
+GET http://localhost:3000/users/617def8d57fb914d01ef7d0l
+
+
+###
+
+POST http://localhost:8000/users
+Content-Type: application/json
+
+{
+    "name": "ooga-meister"
+}
+
+###
+
+DELETE http://localhost:3000/users/617df33051510c4b11921d26
+
+
+###
+
+PATCH http://localhost:8000/users/6184589055037c2e5877369d
+Content-Type: application/json
+
+{
+    "name": "Boogan-heimer"
+}
+
+
+
+###
+
+
+GET http://localhost:8000/pixels
+
+###
+
+POST http://localhost:8000/pixels
+Content-Type: application/json
+
+{
+    "color" : "#FFFFFF"
+}
+
+###
+
+PATCH http://localhost:8000/pixels/6184594455037c2e587736a2
+Content-Type: application/json
+
+{
+    "color": "#230584"
+}
+
+
