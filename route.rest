@@ -1,4 +1,4 @@
-GET http://localhost:8000/users
+GET http://localhost:5001/users
 
 ###
 
@@ -7,7 +7,7 @@ GET http://localhost:3000/users/617def8d57fb914d01ef7d0l
 
 ###
 
-POST http://localhost:8000/users
+POST http://localhost:5001/users
 Content-Type: application/json
 
 {
@@ -33,11 +33,11 @@ Content-Type: application/json
 ###
 
 
-GET http://localhost:8000/pixels
+GET http://localhost:5001/pixels
 
 ###
 
-POST http://localhost:8000/pixels
+POST http://localhost:5001/pixels
 Content-Type: application/json
 
 {
@@ -46,7 +46,7 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:8000/pixels/6184594455037c2e587736a2
+PATCH http://localhost:5001/pixels/6184594455037c2e587736a2
 Content-Type: application/json
 
 {

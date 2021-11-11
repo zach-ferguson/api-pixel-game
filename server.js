@@ -23,6 +23,12 @@ app.use('/users', usersRouter)
 const pixelsRouter = require('./routes/pixels')
 app.use('/pixels', pixelsRouter)
 
+const settingsRouter = require('./routes/settings')
+app.use('/settings', settingsRouter)
+
+const galleryRouter = require('./routes/gallery')
+app.use('/gallery', galleryRouter)
+
 var port = process.env.PORT || 3001;
 
 app.listen(port, () => {
