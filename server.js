@@ -1,4 +1,5 @@
 require('dotenv').config()
+const path = require("path");
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
@@ -17,13 +18,22 @@ db.once('open', () => console.log("Connected to Database"))
 
 app.use(express.json())
 
+// add middlewares
+app.use(express.static(path.join(__dirname, "..", "pixel-game", "pixel-app", "build")));
+app.use(express.static("public"));
+
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, "..", "pixel-game", "pixel-app", "build", "index.html"));
+  });
+
+
 const usersRouter = require('./routes/users')
 app.use('/users', usersRouter)
 
 const pixelsRouter = require('./routes/pixels')
 app.use('/pixels', pixelsRouter)
 
-var port = process.env.PORT || 3001;
+var port = process.env.PORT || 5001;
 
 app.listen(port, () => {
     console.log("Server started...");

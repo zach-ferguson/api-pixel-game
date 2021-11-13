@@ -1,4 +1,4 @@
-GET http://localhost:8000/users
+GET http://localhost:5001/users
 
 ###
 
@@ -37,7 +37,7 @@ GET http://localhost:8000/pixels
 
 ###
 
-POST http://localhost:8000/pixels
+POST http://localhost:5001/pixels
 Content-Type: application/json
 
 {
