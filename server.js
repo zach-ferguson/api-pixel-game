@@ -18,10 +18,10 @@ db.on('error', (error) => console.error(error))
 db.once('open', () => console.log("Connected to Database"))
 
 app.use(express.json())
-
 // add middlewares
- app.use(express.static(path.join(__dirname, "..", "pixel-game", "pixel-app", "build")));
+ app.use(express.static(path.join(__dirname, "..", "pixel-game", "build")));
  app.use(express.static("public"));
+
 
 const usersRouter = require('./routes/users')
 app.use('/users', usersRouter)
@@ -36,7 +36,7 @@ const galleryRouter = require('./routes/gallery')
 app.use('/gallery', galleryRouter)
 
  app.use((req, res, next) => {
-   res.sendFile(path.join(__dirname, "..", "pixel-game", "pixel-app", "build", "index.html"));
+   res.sendFile(path.join(__dirname, "..", "pixel-game", "build", "index.html"));
    });
 
 
