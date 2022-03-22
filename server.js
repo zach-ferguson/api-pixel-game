@@ -7,7 +7,7 @@ const cors = require("cors")
 
 app.use(
     cors({
-	origin: "localhost:80",
+	origin: "http://localhost:3000",
         credentials: true,
     })
 )
@@ -22,7 +22,6 @@ app.use(express.json())
  app.use(express.static(path.join(__dirname, "..", "pixel-game", "build")));
  app.use(express.static("public"));
 
-
 const usersRouter = require('./routes/users')
 app.use('/users', usersRouter)
 
@@ -35,10 +34,9 @@ app.use('/settings', settingsRouter)
 const galleryRouter = require('./routes/gallery')
 app.use('/gallery', galleryRouter)
 
- app.use((req, res, next) => {
-   res.sendFile(path.join(__dirname, "..", "pixel-game", "build", "index.html"));
-   });
-
+app.use((req, res, next) => {
+res.sendFile(path.join(__dirname, "..", "pixel-game", "build", "index.html"));
+});
 
 var port = process.env.PORT || 5001;
 

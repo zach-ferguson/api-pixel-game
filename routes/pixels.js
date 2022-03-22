@@ -69,4 +69,5 @@ async function getPixel(req, res, next) {
     res.pixel = pixel
     next()
 }
+
 module.exports = router
